@@ -1,0 +1,1317 @@
+﻿<telerik:RadRibbonWindow   x:Class="VertexFXClient.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+               xmlns:telerik1="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:helpers="clr-namespace:Telerik.Windows.Controls.Theming.Helpers;assembly=Telerik.Windows.Controls"
+                           xmlns:datawindow="clr-namespace:VertexFXClient.DataWindow"
+         xmlns:local="clr-namespace:VertexFXClient.images"
+        xmlns:telerik2="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:local1="clr-namespace:VertexFXClient.images" xmlns:marketwatch="clr-namespace:VertexFXClient.MarketWatch" xmlns:navigator="clr-namespace:VertexFXClient.Navigator" xmlns:trade="clr-namespace:VertexFXClient.Trade" xmlns:nettrade="clr-namespace:VertexFXClient.NetTrade" xmlns:history="clr-namespace:VertexFXClient.History" xmlns:journal="clr-namespace:VertexFXClient.Journal" xmlns:mailbox="clr-namespace:VertexFXClient.MailBox" xmlns:alerts="clr-namespace:VertexFXClient.Alerts" xmlns:vsrore="clr-namespace:VertexFXClient.vSrore" xmlns:backtesting="clr-namespace:VertexFXClient.BackTesting" xmlns:news="clr-namespace:VertexFXClient.News" xmlns:newsbar="clr-namespace:VertexFXClient.NewsBar" xmlns:statusbar="clr-namespace:VertexFXClient.StatusBar"
+                           Title="MainWindow"  Height="750" Width="1250" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
+                           >
+    <Window.Icon>
+        <telerik2:BitmapImage UriSource="images/logo.png" DecodePixelWidth="30" DecodePixelHeight="30" />
+    </Window.Icon>
+
+    <Grid x:Name="Root" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <telerik:RadRibbonView   telerik2:Grid.ColumnSpan="2" ApplicationName="VertexFXClient" 
+                         Name="ribbon"  ShowLayoutModeButton="True"   FlowDirection="LeftToRight"  Title="User Name" WindowIconVisibility="Visible" IsMinimizable="False" MinimizeButtonVisibility="Visible"  >
+
+
+
+
+
+            <telerik:RadRibbonView.QuickAccessToolBar>
+                <telerik:QuickAccessToolBar Margin="10 0 0 0" >
+
+
+                    <telerik:RadRibbonButton Text="Save" SmallImage="images/PicRefresh.png"
+                             Size="Small" 
+                             telerik:KeyTipService.AccessText="1" />
+                    <telerik:RadRibbonButton Text="Undo" SmallImage="images/PicOption.png" 
+                             Size="Small" 
+                             telerik:KeyTipService.AccessText="2" />
+                    <telerik:RadRibbonButton Text="Print" SmallImage="images/PicHelp.png" 
+                             Size="Small" 
+                             telerik:KeyTipService.AccessText="3" />
+                    <telerik:RadRibbonButton Text="Print" SmallImage="images/PicAbout.png" 
+            Size="Small" 
+            telerik:KeyTipService.AccessText="3" />
+                    <telerik:RadRibbonButton Text="Print" SmallImage="images/PicLogon.png" 
+            Size="Small" 
+            telerik:KeyTipService.AccessText="3" />
+
+                </telerik:QuickAccessToolBar>
+
+
+
+            </telerik:RadRibbonView.QuickAccessToolBar>
+
+
+
+            <telerik:RadRibbonTab Header="Home" telerik2:ScrollViewer.HorizontalScrollBarVisibility="Visible" IsTabStop="False">
+                <telerik:RadRibbonGroup Header="Teade">
+
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdnewPostion}" Size="Large"
+                                         LargeImage="images/PicNO.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdnewOrder}" Size="Large"
+                             LargeImage="images/PicLS.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdStatmement}" Size="Large"
+                            LargeImage="images/PicStatmement.png" />
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdBroadCastMessage}" Size="Large"
+                      LargeImage="images/PicBroad.png" />
+
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Administration">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdlogin}" Size="Large"
+                                             LargeImage="images/PicLogon.png" />
+                    <telerik:RadRibbonButton   Text="{DynamicResource stdlogout}" Size="Large"
+                            LargeImage="images/PicLogout.png" />
+                    <telerik:RadRibbonButton Text="{DynamicResource stdChangePassword}" Size="Large"
+                           LargeImage="images/PicPwd.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdRefreshAccount}" Size="Large"
+                        LargeImage="images/PicRefresh.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdSendEmail}" Size="Large"
+                             LargeImage="images/PicMail.png" />
+
+
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Options">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdMute}" Size="Large"
+                                             LargeImage="images/SoundOnImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdOptions}" Size="Large"
+                            LargeImage="images/PicOption.png" />
+
+
+
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="System Interface">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stSimpleInterFace}" Size="Large"
+                              LargeImage="images/InterfaceImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdRestInterFace}" Size="Large"
+             LargeImage="images/PicResetInterface.png" />
+
+
+
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Others">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdOpenDemoAccount}" Size="Large"
+                 LargeImage="images/PicDemoAcc.png" />
+
+
+
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Exit">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdExitSystem}" Size="Large"
+    LargeImage="images/ExitImg.png" />
+
+
+
+
+
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+
+            <telerik:RadRibbonTab Header="View">
+                <telerik:RadRibbonGroup Header="Teade">
+
+
+
+
+                    <telerik:RadRibbonDropDownButton Text="Languages"
+                                                     LargeImage="images/PicLang.png"
+                                                     Size="Large" >
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+                                <telerik:RadMenuItem Header="Arabic" Click="Arab_Lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding AarabicLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="English" Click="English_lang" >
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding EnglishLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Hindi" Click="Hindi_lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding HindiLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Spanish" Click="spanch_lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding spanichLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Chinese" Click="china_lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding chineseLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Portuguese" Click="portugal_lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding portugalLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Japanese"  Click="japanees_lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding japanesLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Russian" Click="russian_lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding russianLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Urdu" Click="urdu_lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding urduLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="French" Click="french_lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding FrenchLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Hebrew" Click="hebrew_lang">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding ebrilang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+
+
+
+
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Show/Hide Windows">
+
+
+                    <telerik:RadToggleButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="images/PicAccount.png" Width="30" Height="30" Margin="0,0,5,10" />
+                            <TextBlock Text="{DynamicResource stdNavigator}" />
+                        </StackPanel>
+                    </telerik:RadToggleButton>
+
+                    <telerik:RadToggleButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0"
+                                            >
+                        <StackPanel Orientation="Vertical" >
+                            <Image Source="images/PicSymbol.png" Width="30" Height="30" Margin="0,0,5,10" />
+                            <TextBlock Text="{DynamicResource stdMarketWatch}" TextAlignment="Center" />
+                        </StackPanel>
+                    </telerik:RadToggleButton>
+
+                    <telerik:RadToggleButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0"
+                                             >
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="images/PicTickChart.png" Width="30" Height="30" Margin="0,0,5,10" />
+                            <TextBlock Text="{DynamicResource stdTickChart}" />
+                        </StackPanel>
+                    </telerik:RadToggleButton>
+
+
+
+
+
+                    <telerik:RadRibbonDropDownButton Text="{DynamicResource stdShowAll}"  Size="Large"
+                                 LargeImage="images/PicShowAll.png"
+                            >
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+                                <telerik:RadMenuItem Header="Trade" Click="RadMenuItem_Click">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding AarabicLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Net Trade">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding EnglishLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Account History">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding HindiLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Journal">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding HindiLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Mailbox">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding HindiLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Alerts">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding HindiLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="BackTesting">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding HindiLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+                    <telerik:RadToggleButton  Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="images/PicNews.png" Width="30" Height="30" Margin="0,0,5,10" />
+                            <TextBlock Text="{DynamicResource stdNews}" />
+                        </StackPanel>
+                    </telerik:RadToggleButton>
+
+                    <telerik:RadToggleButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="images/PicPlugins.png" Width="30" Height="30" Margin="0,0,5,10" />
+                            <TextBlock Text="{DynamicResource stdvStore}"/>
+                        </StackPanel>
+                    </telerik:RadToggleButton>
+
+                    <telerik:RadToggleButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="images/mnuTable.png" Width="30" Height="30" Margin="0,0,5,10" />
+                            <TextBlock Text="{DynamicResource stdDataWindow}" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </telerik:RadToggleButton>
+
+
+
+
+
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="System Interface">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdSimpleInterface}" Size="Large"
+                                             LargeImage="images/InterfaceImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdResetInterface}" Size="Large"
+                            LargeImage="images/PicResetInterface.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdWindowsTitleBar}" Size="Large"
+         LargeImage="images/PicTitleBar.png" />
+
+
+                </telerik:RadRibbonGroup>
+
+            </telerik:RadRibbonTab>
+
+            <telerik:RadRibbonTab Header="Charts">
+                <telerik:RadRibbonGroup Header="Price Styles">
+
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdCandlestickBarStyle}" Size="Large"
+                           LargeImage="images/CandlesImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdStandardBarStyle}" Size="Large"
+                           LargeImage="images/StandardImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdLineChart}" Size="Large"
+                           LargeImage="images/LineChartImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdHeikinAshi}" Size="Large"
+                          LargeImage="images/HeikinAshiImg.png" />
+
+
+
+
+
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Chart Data">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdLoadAllChartData}" Size="Large"
+                                             LargeImage="images/FullScreenChartImg.png" />
+
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Chart Saving">
+
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdSaveasPicture}" Size="Large"
+                             LargeImage="images/PicBitmap.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdPrintChart}" Size="Large"
+                          LargeImage="images/PicPrint.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdPriceHistory}" Size="Large"
+       LargeImage="images/PicList.png" />
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Chart Zooming">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdZoomIn}" Size="Large"
+                                             LargeImage="images/ZoomInImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdZoomOut}" Size="Large"
+                            LargeImage="images/ZoomOutImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdPeriodZoom}" Size="Large"
+         LargeImage="images/PeriodZoomImg.png" />
+
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Chart Control">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdChartShift}" Size="Large"
+                                    LargeImage="images/ShiftChartImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdFirstRecord}" Size="Large"
+                   LargeImage="images/HomeImg.png" />
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdBackwardStep}" Size="Large"
+                 LargeImage="images/ShiftLeftImg.png"/>
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdForwardStep}" Size="Large"
+                      LargeImage="images/ShiftRightImg.png"/>
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdLastRecord}" Size="Large"
+LargeImage="images/EndImg.png"/>
+
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Show/Hide">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdGrid}" Size="Large"
+                                    LargeImage="images/PicGrid.png" />
+
+
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Options">
+
+
+                    <telerik:RadRibbonButton  Text="{DynamicResource stdChartOptions}" Size="Large"
+                        LargeImage="images/ChartOptionsImg.png" />
+
+
+
+                </telerik:RadRibbonGroup>
+
+            </telerik:RadRibbonTab>
+
+
+
+
+            <telerik:RadRibbonTab Header="Technical Analysis">
+                <telerik:RadRibbonGroup Header="Trade">
+
+
+
+                    <telerik:RadRibbonButton  Text="New Postion" Size="Large"
+                           LargeImage="images/PicNO.png" />
+                    <telerik:RadRibbonButton  Text="New Entry Order" Size="Large"
+                           LargeImage="images/PicLS.png" />
+
+
+
+
+
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Chart Period">
+                    <telerik:RadRibbonDropDownButton Text="Daily"
+                                 LargeImage="images/DailyImg.png"
+                                 Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+                                <telerik:RadMenuItem Header="One Minute">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/1MinutesImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Five Minutes">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/5MinutesImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Fifteen Minutes">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/15MinutesImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Thirty Minutes">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/30MinutesImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="One Hour">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/1HourImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Four Hours">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/4HoursImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Daily">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/DailyImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Weekly">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/WeeklyImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Monthly">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/MonthlyImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+                </telerik:RadRibbonGroup>
+
+
+                <telerik:RadRibbonGroup Header="Cursor">
+                    <telerik:RadRibbonButton  Text="Cursor" Size="Large"
+                LargeImage="images/CursorImg.png" />
+                    <telerik:RadRibbonButton  Text="Crosshairs" Size="Large"
+                   LargeImage="images/CrosshairsImg.png" />
+                    <telerik:RadRibbonDropDownButton Text="Remove Readings"
+                                 LargeImage="images/RemoveCrosshairsImg.png"
+                                 Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="Remove Readings">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding EnglishLang}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Add Object">
+
+
+                    <telerik:RadRibbonDropDownButton Text="Fibonacci"
+                  LargeImage="images/fibo.png"
+                  Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="Fibonacci Retracements">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/FiboRetracementsImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Fibonacci Projection">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/FiboProjectionImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Fibonacci Fan">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/FiboFanImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Fibonacci Arcs">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/FiboArcsImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Fibonacci Time Zones">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/FiboTimeZoneImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton Text="Line Studies"
+                  LargeImage="images/lines.png"
+                  Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="Horizantal Line">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/HorLineImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Vertical Line">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/VerLineImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Trend Line">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/TrendLineImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Arrowed Line">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/ArrowLineImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Ray">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/ArrowLineImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Speed Line">
+
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Quadrant Lines">
+
+                                </telerik:RadMenuItem>
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton Text="Channels"
+LargeImage="images/custom.png"
+Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="Tirone Levels">
+
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Raff Regression">
+
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Erorr Channels">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/ErrChannelsImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Gann Fan">
+
+                                </telerik:RadMenuItem>
+
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton Text="Drawings"
+LargeImage="images/drawings.png"
+Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+
+                                <telerik:RadMenuItem Header="Ellipse">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding ellipse}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Rectangle">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding rectangle}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Traiangle">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="{Binding traiangle}" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Free Hand">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/FreeHandImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton Text="Symbols and Text"
+LargeImage="images/symbols.png"
+Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+
+                                <telerik:RadMenuItem Header="Add Text">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/TextImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Label">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/LabelImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Price Label">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/PriceImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Annotations">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/AnnotationsImg.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonButton  Text="Edit/Delete Objects" Size="Large"
+        LargeImage="images/ObjectsImg.png" />
+
+                </telerik:RadRibbonGroup>
+
+
+                <telerik:RadRibbonGroup Header="Add Indicator">
+
+
+                    <telerik:RadRibbonDropDownButton Text="Oscillators"
+                  LargeImage="images/oscillators.png"
+                  Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="Williams %R">
+
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Average True Range">
+
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Momentum Oscillator">
+
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="MACD"/>
+                                <telerik:RadMenuItem Header="Detrended Price Oscillator "/>
+
+                                <telerik:RadMenuItem Header="Commodity Channel Index"/>
+
+                                <telerik:RadMenuItem Header="Moving Average Envelope "/>
+
+                                <telerik:RadMenuItem Header="Relative Strength Index "/>
+
+                                <telerik:RadMenuItem Header="Stochastic Oscillator "/>
+
+
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+
+                    <telerik:RadRibbonDropDownButton Text="Trends"
+                  LargeImage="images/trends.png"
+                  Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="Moving Average">
+
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Parabolic SAR">
+
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Average Directional Movement Index">
+
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="Standard Deviation"/>
+
+                                <telerik:RadMenuItem Header="Bollinger Bands"/>
+
+
+
+
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton Text="Volumes"
+LargeImage="images/volume.png"
+Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="Volume ROC"/>
+
+
+                                <telerik:RadMenuItem Header="Money Flow Index">
+
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="On Balance Volume">
+
+                                </telerik:RadMenuItem>
+
+
+
+
+
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton Text="Others"
+LargeImage="images/custom.png"
+Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="Welles Wilder Smothing"/>
+
+                                <telerik:RadMenuItem Header="Williams  Accumulation Distribution"/>
+
+                                <telerik:RadMenuItem Header="Volume Oscillator"/>
+
+                                <telerik:RadMenuItem Header="Vertical Horizantal Filter"/>
+
+                                <telerik:RadMenuItem Header="Ultimate Oscillator "/>
+
+                                <telerik:RadMenuItem Header="TRIX"/>
+
+                                <telerik:RadMenuItem Header="Rainbow Oscillator"/>
+
+                                <telerik:RadMenuItem Header="Price Oscillator"/>
+
+                                <telerik:RadMenuItem Header="Ease of Movement"/>
+
+                                <telerik:RadMenuItem Header="Chande Momentum Oscillator "/>
+
+                                <telerik:RadMenuItem Header="Chaikin Volatility "/>
+
+                                <telerik:RadMenuItem Header="Aroon"/>
+
+                                <telerik:RadMenuItem Header="Aroon Oscillator"/>
+
+                                <telerik:RadMenuItem Header="Linear Regression R_Squared"/>
+
+                                <telerik:RadMenuItem Header="Linear Regression Forecast"/>
+
+                                <telerik:RadMenuItem Header="Linear Regression Slpe"/>
+
+                                <telerik:RadMenuItem Header="Linear Regression Intercept"/>
+
+                                <telerik:RadMenuItem Header="Price Volume Trend"/>
+
+                                <telerik:RadMenuItem Header="Performance Index"/>
+
+                                <telerik:RadMenuItem Header="Chaikin Money Flow"/>
+
+                                <telerik:RadMenuItem Header="Weighted Close"/>
+
+                                <telerik:RadMenuItem Header="Typical Price"/>
+
+                                <telerik:RadMenuItem Header="Price Roc"/>
+
+                                <telerik:RadMenuItem Header="Median Price"/>
+
+                                <telerik:RadMenuItem Header="High Minus Low"/>
+
+                                <telerik:RadMenuItem Header="Fractal Chaos Bands"/>
+
+                                <telerik:RadMenuItem Header="High/Low Bands"/>
+
+                                <telerik:RadMenuItem Header="Swing Index"/>
+
+                                <telerik:RadMenuItem Header="Accumulative  Swing Index"/>
+
+                                <telerik:RadMenuItem Header="Comparative RSI"/>
+
+                                <telerik:RadMenuItem Header="Mass Index"/>
+
+                                <telerik:RadMenuItem Header="Navigative Volume Index"/>
+
+                                <telerik:RadMenuItem Header="Positive Volume Index"/>
+
+                                <telerik:RadMenuItem Header="Trade Volume Index"/>
+
+                                <telerik:RadMenuItem Header="Stochastic Momentum Index"/>
+
+                                <telerik:RadMenuItem Header="Fractal Chaos Oscillator"/>
+
+                                <telerik:RadMenuItem Header="Prime Number Oscillator"/>
+
+                                <telerik:RadMenuItem Header="Prime Number Bands"/>
+
+                                <telerik:RadMenuItem Header="Historical Volatility"/>
+
+
+
+
+
+
+
+
+
+
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonButton  Text="Edit/Delete Indicator" Size="Large"
+                           LargeImage="images/AddDrawingImg.png" />
+
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Darvas Boxes">
+
+                    <telerik:RadRibbonButton  Text=" Display Darvas Boxes" Size="Large"
+         LargeImage="images/darvas.png" />
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Templates">
+
+                    <telerik:RadRibbonDropDownButton Text="Templates"
+                       LargeImage="images/TemplatesImg.png"
+                       Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="Save Templates"/>
+
+                                <telerik:RadMenuItem Header="Remove Template List">
+                                    <telerik:RadMenuItem Header="ADX"/>
+                                    <telerik:RadMenuItem Header="BollingerBands"/>
+                                    <telerik:RadMenuItem Header="Dinapolli"/>
+                                    <telerik:RadMenuItem Header="JUST FIXCUSTOM"/>
+                                    <telerik:RadMenuItem Header="METACORP CUSTOM"/>
+                                    <telerik:RadMenuItem Header="Momentum"/>
+                                    <telerik:RadMenuItem Header="Pivot Points"/>
+                                    <telerik:RadMenuItem Header="Popular"/>
+                                </telerik:RadMenuItem>
+
+
+                                <Separator/>
+                                <telerik:RadMenuItem Header="ADX"/>
+                                <telerik:RadMenuItem Header="BollingerBands"/>
+                                <telerik:RadMenuItem Header="Dinapolli"/>
+                                <telerik:RadMenuItem Header="JUST FIXCUSTOM"/>
+                                <telerik:RadMenuItem Header="METACORP CUSTOM"/>
+                                <telerik:RadMenuItem Header="Momentum"/>
+                                <telerik:RadMenuItem Header="Pivot Points"/>
+                                <telerik:RadMenuItem Header="Popular"/>
+
+
+
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Full Screen">
+
+                    <telerik:RadRibbonButton  Text="Maximize" Size="Large"
+LargeImage="images/FullScreenChartImg.png" />
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Strategy">
+
+                    <telerik:RadRibbonButton  Text="VTL Editor" Size="Large"
+LargeImage="images/VTLEditor.png" />
+
+                </telerik:RadRibbonGroup>
+
+
+
+
+
+
+
+
+            </telerik:RadRibbonTab>
+
+            <telerik:RadRibbonTab Header="Tick Chart">
+
+
+
+
+                <telerik:RadRibbonGroup Header="Show/Hide">
+
+                    <telerik:RadRibbonButton  Text="Ask Line" Size="Large"
+                   LargeImage="images/PicAsk.png" />
+                    <telerik:RadRibbonButton  Text="Crosshairs" Size="Large"
+                    LargeImage="images/CrosshairsImg.png" />
+                    <telerik:RadRibbonButton  Text="Grid" Size="Large"
+                   LargeImage="images/PicGrid.png" />
+                    <telerik:RadRibbonButton  Text="Maximize" Size="Large"
+                   LargeImage="images/FullScreenChartImg.png" />
+
+                </telerik:RadRibbonGroup>
+
+
+                <telerik:RadRibbonGroup Header="Saving">
+
+                    <telerik:RadRibbonButton  Text="Save as Picture" Size="Large"
+    LargeImage="images/PicBitmap.png" />
+                    <telerik:RadRibbonButton  Text="Print" Size="Large"
+     LargeImage="images/PicPrint.png" />
+                    <telerik:RadRibbonButton  Text="Price History" Size="Large"
+    LargeImage="images/PicList.png" />
+
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Clear">
+
+                    <telerik:RadRibbonButton  Text="Clear Tick Chart" Size="Large"
+LargeImage="images/PicClear.png" />
+
+
+
+                </telerik:RadRibbonGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </telerik:RadRibbonTab>
+
+
+            <telerik:RadRibbonTab Header="Apps">
+
+
+
+
+                <telerik:RadRibbonGroup Header="Tools and Plugins">
+
+                    <telerik:RadRibbonButton  Text="Calculator" Size="Large"
+                   LargeImage="images/calc.png"/>
+                    <telerik:RadRibbonButton  Text="Visit Our Website" Size="Large"
+                    LargeImage="images/www.png"/>
+                    <telerik:RadRibbonButton  Text="Contact Us" Size="Large"
+                   LargeImage="images/Contact.png" />
+
+                    <telerik:RadRibbonButton  Text="Manager Plugins" Size="Large"
+                   LargeImage="images/addplugin.png" />
+
+                    <telerik:RadRibbonButton  Text="Check Favorite Plugins" Size="Large"
+ LargeImage="images/default.png" />
+
+                </telerik:RadRibbonGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </telerik:RadRibbonTab>
+
+
+            <telerik:RadRibbonTab Header="Help">
+
+
+
+
+                <telerik:RadRibbonGroup Header="VertexFx University">
+
+                    <telerik:RadRibbonDropDownButton Text="Help Topics"
+             LargeImage="images/PicHelp.png"
+             Size="Large">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadMenu Orientation="Vertical">
+
+                                <telerik:RadMenuItem Header="General Help Topics">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/PicHelp.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="VTL Client Help Topics">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/PicHelp.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="VTL Server Help Topics">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/PicHelp.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Education Center">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Source="images/PicHelp.png" Width="12" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+
+                            </telerik:RadMenu>
+
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+                    <telerik:RadRibbonButton  Text="Tutorial" Size="Large"
+        LargeImage="images/tutorial.png" />
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Hot Keys">
+
+                    <telerik:RadRibbonButton  Text="Hot Keys" Size="Large"
+                   LargeImage="images/PicHotkey.png" />
+
+                </telerik:RadRibbonGroup>
+
+
+                <telerik:RadRibbonGroup Header="About">
+
+
+                    <telerik:RadRibbonButton  Text="Release Notes" Size="Large"
+                     LargeImage="images/release.png" />
+
+                    <telerik:RadRibbonButton  Text="Risk DisClaimer" Size="Large"
+                     LargeImage="images/risk.png" />
+
+                    <telerik:RadRibbonButton  Text="Visit Our Website" Size="Large"
+  LargeImage="images/www.png" />
+
+                    <telerik:RadRibbonButton  Text="Contact Us" Size="Large"
+LargeImage="images/Contact.png" />
+
+                    <telerik:RadRibbonButton  Text="About" Size="Large"
+LargeImage="images/PicAbout.png" />
+
+                    <telerik:RadRibbonButton  Text="Feedback" Size="Large"
+                LargeImage="images/feedback.png" />
+
+                </telerik:RadRibbonGroup>
+
+
+            </telerik:RadRibbonTab>
+
+            <telerik:RadRibbonTab Header="Layout">
+
+
+
+
+                <telerik:RadRibbonGroup Header="Mode">
+
+                    <telerik:RadRibbonButton  Text="Dark" Size="Large"
+LargeImage="images/themes (1).png" Click="btn_Dark"/>
+                    <telerik:RadRibbonButton  Text="light" Size="Large"
+LargeImage="images/themes.png" Click="btn_light" />
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Font Style">
+
+
+
+                </telerik:RadRibbonGroup>
+
+
+
+
+
+            </telerik:RadRibbonTab>
+
+        </telerik:RadRibbonView>
+
+        <Grid Grid.Row="1" FlowDirection="LeftToRight" Name="main_layout">
+            <telerik:RadDocking x:Name="radDocking" Grid.Row="1" >
+                <telerik:RadSplitContainer x:Name="radSplitContainer" Orientation="Horizontal" InitialPosition="DockedTop" Height="350"  >
+                    <telerik:RadPaneGroup  telerik:ProportionalStackPanel.RelativeSize="400, 200"  >
+                        <telerik:RadPane telerik:LayoutRoundingHelper.EnableLayoutRounding="True"  telerik:CornerRadiusHelper.ClipRadius=" 0 0 10 0" Header="Ticks" PaneHeaderVisibility="Collapsed" >
+
+                        </telerik:RadPane>
+
+                    </telerik:RadPaneGroup>
+                    <telerik:RadSplitContainer Orientation="Vertical" telerik:ProportionalStackPanel.RelativeSize="200, 200">
+                        <telerik:RadPaneGroup>
+                            <telerik:RadPane Header="Market Watch" PaneHeaderVisibility="Collapsed" >
+                                <marketwatch:MarketWatch/>
+                            </telerik:RadPane>
+                            <telerik:RadPane  Header="Ticks" PaneHeaderVisibility="Collapsed" >
+
+                            </telerik:RadPane>
+
+                        </telerik:RadPaneGroup>
+                        <telerik:RadPaneGroup>
+                            <telerik:RadPane Header="Navigator" PaneHeaderVisibility="Collapsed">
+                                <navigator:NavigatorView/>
+
+                            </telerik:RadPane>
+                            <telerik:RadPane telerik:LayoutRoundingHelper.EnableLayoutRounding="True"  telerik:CornerRadiusHelper.ClipRadius=" 0 0 10 0" Header="Data Window" PaneHeaderVisibility="Collapsed" HorizontalAlignment="Right" Width="83">
+
+                                <datawindow:DataWindowView/>
+
+
+                            </telerik:RadPane>
+                        </telerik:RadPaneGroup>
+
+                    </telerik:RadSplitContainer>
+                </telerik:RadSplitContainer>
+
+
+
+                <telerik:RadSplitContainer x:Name="radSplitContainer1"  InitialPosition="DockedBottom"   >
+                    <telerik:RadPaneGroup Margin="0,0,0,0" 
+                        telerik:CornerRadiusHelper.ClipRadius="10">
+
+
+
+
+                        <telerik:RadPane Header=" Trade"  PaneHeaderVisibility="Collapsed" >
+
+
+                            <trade:TradeView/>
+
+                        </telerik:RadPane>
+                        <telerik:RadPane PaneHeaderVisibility="Collapsed" Header="Net Trade"  telerik:CornerRadiusHelper.ClipRadius="0 0 15 0">
+                            <nettrade:NetTrade/>
+
+                        </telerik:RadPane>
+                        <telerik:RadPane Header="History(0)" PaneHeaderVisibility="Collapsed"  telerik:CornerRadiusHelper.ClipRadius="0 0 15 0" >
+                            <history:HistoryView/>
+
+                        </telerik:RadPane>
+
+                        <telerik:RadPane Header="Journal"  PaneHeaderVisibility="Collapsed"  telerik:CornerRadiusHelper.ClipRadius="0 0 15 0">
+                            <journal:JournalView/>
+
+                        </telerik:RadPane>
+                        <telerik:RadPane Header="Mailbox"  PaneHeaderVisibility="Collapsed"  telerik:CornerRadiusHelper.ClipRadius="0 0 15 0"  >
+                            <mailbox:MailBoxView/>
+                        </telerik:RadPane>
+                        <telerik:RadPane Header="Alerts"  PaneHeaderVisibility="Collapsed" telerik:CornerRadiusHelper.ClipRadius="0 0 15 0" >
+                            <alerts:AlertsView/>
+                        </telerik:RadPane>
+                        <telerik:RadPane Header="vStore"  PaneHeaderVisibility="Collapsed"  telerik:CornerRadiusHelper.ClipRadius="0 0 15 0"
+                                         BorderThickness="0">
+                            <vsrore:vStoeView/>
+
+
+                        </telerik:RadPane>
+                        <telerik:RadPane Header="BackTesting"  PaneHeaderVisibility="Collapsed"  telerik:CornerRadiusHelper.ClipRadius="0 0 15 0"
+                  BorderThickness="0">
+                            <backtesting:BackTestingView/>
+
+
+                        </telerik:RadPane>
+                        <telerik:RadPane Header="News"  PaneHeaderVisibility="Collapsed"  telerik:CornerRadiusHelper.ClipRadius="0 0 15 0"
+BorderThickness="0">
+                            <news:NewsView/>
+
+                        </telerik:RadPane>
+
+                    </telerik:RadPaneGroup>
+
+
+                </telerik:RadSplitContainer>
+
+            </telerik:RadDocking>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackPanel>
+                <newsbar:NewsBarView/>
+                <statusbar:StatusBarView/>
+            </StackPanel>
+        </Grid>
+
+
+
+    </Grid>
+</telerik:RadRibbonWindow>

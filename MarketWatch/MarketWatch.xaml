@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="VertexFXClient.MarketWatch.MarketWatch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik2="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:local="clr-namespace:VertexFXClient.MarketWatch" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <telerik:RadGridView    x:Name="radGridView" 
+           AutoGenerateColumns="False" ItemsSource="{Binding markets}" >
+        <telerik:RadGridView.Columns>
+            <telerik:GridViewDataColumn Width="60"  HeaderTextAlignment="Center" DataMemberBinding="{Binding Symbol}" Header="symbole"/>
+            <telerik:GridViewDataColumn Width="60"  HeaderTextAlignment="Center" DataMemberBinding="{Binding bid}" Header="bid" />
+            <telerik:GridViewDataColumn Width="60"  HeaderTextAlignment="Center"    DataMemberBinding="{Binding ask}" Header="ask" />
+            <telerik:GridViewDataColumn Width="60"   HeaderTextAlignment="Center" DataMemberBinding="{Binding high}" Header="high"/>
+            <telerik:GridViewDataColumn Width="60"  HeaderTextAlignment="Center" DataMemberBinding="{Binding low}"   Header="low" />
+            <telerik:GridViewDataColumn Width="60"  HeaderTextAlignment="Center" DataMemberBinding="{Binding time}"   Header="time" />
+            <telerik:GridViewDataColumn  Width="100"  HeaderTextAlignment="Center" DataMemberBinding="{Binding expiryDate}"  Header=" expiry Date" />
+            <telerik:GridViewDataColumn Width="100"  HeaderTextAlignment="Center" DataMemberBinding="{Binding openPrice}"   Header="open Price"/>
+            <telerik:GridViewDataColumn Width="100"  HeaderTextAlignment="Center" DataMemberBinding="{Binding closePrice}"  Header="close Price" />
+            <telerik:GridViewDataColumn Width="100"  HeaderTextAlignment="Center" DataMemberBinding="{Binding netChange}"   Header="net Change" />
+            <telerik:GridViewDataColumn  Width="100"  HeaderTextAlignment="Center" DataMemberBinding="{Binding lastPrice}"   Header="last Price" />
+
+            <telerik:GridViewDataColumn  Width="60"  HeaderTextAlignment="Center" DataMemberBinding="{Binding spread}" Header="spread"  />
+            <telerik:GridViewDataColumn Width="100"  HeaderTextAlignment="Center" DataMemberBinding="{Binding maximumAmount}" Header="maximum Amount"   />
+            <telerik:GridViewDataColumn Width="100"  HeaderTextAlignment="Center" DataMemberBinding="{Binding contractSize}"  Header="contract Size"/>
+            <telerik:GridViewDataColumn Width="100"  HeaderTextAlignment="Center" DataMemberBinding="{Binding intialMargin}" Header="intail Margin"  />
+        </telerik:RadGridView.Columns>
+    </telerik:RadGridView>
+
+</UserControl>

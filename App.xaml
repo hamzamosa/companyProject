@@ -1,0 +1,27 @@
+﻿<Application x:Class="VertexFXClient.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+               xmlns:controls="Telerik.Windows.Controls.xaml"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+             
+
+                <!-- Expression Dark Theme -->
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Expression_Dark;component/Themes/System.Windows.xaml"/>
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Expression_Dark;component/Themes/Telerik.Windows.Controls.Input.xaml"/>
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Expression_Dark;component/Themes/Telerik.Windows.Controls.GridView.xaml"/>
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Expression_Dark;component/Themes/Telerik.Windows.Controls.Docking.xaml"/>
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Expression_Dark;component/Themes/Telerik.Windows.Controls.RibbonView.xaml"/>
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Expression_Dark;component/Themes/Telerik.Windows.Controls.Navigation.xaml"/>
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Expression_Dark;component/Themes/Telerik.Windows.Controls.Pivot.xaml"/>
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Expression_Dark;component/Themes/Telerik.Windows.Controls.Data.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

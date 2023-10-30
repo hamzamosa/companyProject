@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="VertexFXClient.BackTesting.BackTestingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:local="clr-namespace:VertexFXClient.BackTesting"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <telerik:RadDocking x:Name="InnerDockin1g" CloseButtonPosition="InPane">
+        <telerik:RadDocking.DocumentHost>
+            <telerik:RadSplitContainer>
+                <telerik:RadPaneGroup>
+                    <telerik:RadPane Header="BackTesting" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="150"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="Script" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Label Grid.Column="0" Grid.Row="1" Content="Period" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Label Grid.Column="0" Grid.Row="2" Content="Symbol" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <ComboBox Grid.Column="1" Height="20">
+                                    <ComboBoxItem Content="hamza"/>
+                                    <ComboBoxItem Content="hamza"/>
+                                    <ComboBoxItem Content="hamza"/>
+                                    <ComboBoxItem Content="hamza"/>
+                                </ComboBox>
+                                <ComboBox Grid.Column="1" Grid.Row="1" Height="20" >
+                                    <ComboBoxItem Content="hamza"/>
+                                    <ComboBoxItem Content="hamza"/>
+                                    <ComboBoxItem Content="hamza"/>
+                                    <ComboBoxItem Content="hamza"/>
+                                </ComboBox>
+                                <ComboBox Grid.Column="1" Grid.Row="2" Height="20">
+                                    <ComboBoxItem Content="hamza"/>
+                                    <ComboBoxItem Content="hamza"/>
+                                    <ComboBoxItem Content="hamza"/>
+                                    <ComboBoxItem Content="hamza"/>
+                                </ComboBox>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <StackPanel >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Run Script After" Margin="8"/>
+                                        <TextBox Width="60" Height="20" Margin="8"/>
+                                        <Label Content="Candles" Margin="8"/>
+                                    </StackPanel>
+                                    <Button Content="Start" Width="150" HorizontalAlignment="Left" Margin="80 10 0 0"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </telerik:RadPane>
+                    <telerik:RadPane Header="Trade" >
+                        <telerik:RadGridView   
+AutoGenerateColumns="False" ItemsSource="{Binding trads}">
+                            <telerik:RadGridView.Columns>
+
+
+                                <telerik:GridViewDataColumn Width="100"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding dateTime}" Header="Ticket"/>
+                                <telerik:GridViewDataColumn Width="60"  HeaderTextAlignment="Center" DataMemberBinding="{Binding type}" Header="date/Time"/>
+                                <telerik:GridViewDataColumn  Width="60"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding amount}" Header="Type"/>
+                                <telerik:GridViewDataColumn  Width="60"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding symbol}" Header="Amount"/>
+                                <telerik:GridViewDataColumn  Width="100"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding openPrice}" Header="Symbol"/>
+                                <telerik:GridViewDataColumn  Width="100"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding unitPrice}" Header="OpenPrice"/>
+                                <telerik:GridViewDataColumn  Width="100"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding CurrentPrice}" Header="Current Price"/>
+                                <telerik:GridViewDataColumn  Width="60"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding Sl}" Header="Sl"/>
+                                <telerik:GridViewDataColumn  Width="60"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding TP}" Header="TP"/>
+                                <telerik:GridViewDataColumn  Width="60"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding comm}" Header="comm"/>
+                                <telerik:GridViewDataColumn  Width="60"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding intrest}" Header="intrest"/>
+                                <telerik:GridViewDataColumn  Width="60"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding PL}" Header="PL" />
+                                <telerik:GridViewDataColumn  Width="100"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding openValue}" Header="openValue"/>
+
+                                <telerik:GridViewDataColumn  Width="100"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding comment}" Header="comment" />
+
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </telerik:RadPane>
+                    <telerik:RadPane Header="Journal" >
+                        <telerik:RadGridView   
+                                         AutoGenerateColumns="False" ItemsSource="{Binding trads}">
+                            <telerik:RadGridView.Columns>
+
+
+                                <telerik:GridViewDataColumn Width="100"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding dateTime}" Header="Time"/>
+                                <telerik:GridViewDataColumn Width="60"  HeaderTextAlignment="Center" DataMemberBinding="{Binding type}" Header="Message"/>
+
+
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </telerik:RadPane>
+                    <telerik:RadPane Header="Summary" >
+                        <telerik:RadGridView   
+                                                 AutoGenerateColumns="False" ItemsSource="{Binding trads}">
+                            <telerik:RadGridView.Columns>
+
+
+                                <telerik:GridViewDataColumn Width="100"  HeaderTextAlignment="Center"  DataMemberBinding="{Binding Summary}" Header="Summary"/>
+                                <telerik:GridViewDataColumn Width="60"  HeaderTextAlignment="Center" DataMemberBinding="{Binding Data}" Header="Data"/>
+
+
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+        </telerik:RadDocking.DocumentHost>
+    </telerik:RadDocking>
+</UserControl>

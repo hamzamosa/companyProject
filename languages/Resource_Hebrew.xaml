@@ -1,0 +1,144 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--home-->
+    <system:String x:Key="stdnewPostion">פוזיציה חדשה</system:String>
+    <system:String x:Key="stdnewOrder">הכנסת הוראה חדשה</system:String>
+    <system:String x:Key="stdStatmement">דו"ח</system:String>
+    <system:String x:Key="stdSendSummary">שלח תוצאות בSMS</system:String>
+    <system:String x:Key="stdBroadCastMessage">שלח הודעה</system:String>
+    <system:String x:Key="stdlogin">כניסה למערכת</system:String>
+    <system:String x:Key="stdlogout">יציאה מהמערכת</system:String>
+    <system:String x:Key="stdChangePassword">שינוי סיסמה</system:String>
+    <system:String x:Key="stdRefreshAccount">רענון חשבונות</system:String>
+    <system:String x:Key="stdSendEmail">שלח תוצאות בדואר אלקטרוני</system:String>
+    <system:String x:Key="stdMute">מצב שקט</system:String>
+    <system:String x:Key="stdOptions">אפשרויות</system:String>
+    <system:String x:Key="stSimpleInterFace">ממשק פשוט</system:String>
+    <system:String x:Key="stdRestInterFace">סדר חלונות במצב ברירת מחדל</system:String>
+    <system:String x:Key="stdOpenDemoAccount">בקש חשבון דמו</system:String>
+    <system:String x:Key="stdExitSystem">יציאה</system:String>
+
+
+    <!--View-->
+    <system:String x:Key="stdNavigator">ניווט</system:String>
+    <system:String x:Key="stdMarketWatch">חלון ציטוטים</system:String>
+    <system:String x:Key="stdTickChart">גרף</system:String>
+    <system:String x:Key="stdShowAll">הצג הכל</system:String>
+    <system:String x:Key="stdNews">חדשות</system:String>
+    <system:String x:Key="stdvStore">vStore</system:String>
+    <system:String x:Key="stdDataWindow">חלון מידע</system:String>
+    <system:String x:Key="stdSimpleInterface">ממשק פשוט</system:String>
+    <system:String x:Key="stdResetInterface">סדר חלונות במצב ברירת מחדל</system:String>
+    <system:String x:Key="stdWindowsTitleBar">שורת הכותרת בחלונות</system:String>
+
+
+    <!--charts-->
+    <system:String x:Key="stdCandlestickBarStyle">Candlestick Bar Style</system:String>
+    <system:String x:Key="stdStandardBarStyle">סרגל כלים רגיל</system:String>
+    <system:String x:Key="stdLineChart">Line Chart</system:String>
+    <system:String x:Key="stdHeikinAshi">Heikin Ashi</system:String>
+    <system:String x:Key="stdLoadAllChartData">Load All Chart Data</system:String>
+    <system:String x:Key="stdSaveasPicture">שמור גרף בתור תמונה</system:String>
+    <system:String x:Key="stdPrintChart">הדפס גרף</system:String>
+    <system:String x:Key="stdPriceHistory">Price History</system:String>
+    <system:String x:Key="stdZoomIn">הגדלה</system:String>
+    <system:String x:Key="stdZoomOut">הקטנה</system:String>
+    <system:String x:Key="stdPeriodZoom">בחר תקופה בגרף</system:String>
+    <system:String x:Key="stdChartShift">הזז שוליים</system:String>
+    <system:String x:Key="stdFirstRecord">תחילת הגרף (הסטוריה)</system:String>
+    <system:String x:Key="stdBackwardStep">צעד אחורה</system:String>
+    <system:String x:Key="stdForwardStep">צעד קדימה</system:String>
+    <system:String x:Key="stdLastRecord">סוף הגרף( עדכני)</system:String>
+    <system:String x:Key="stdGrid">רשת</system:String>
+    <system:String x:Key="stdChartOptions">Chart Options</system:String>
+
+
+    <!--Market Watch-->
+
+    <system:String x:Key="stdMarketWatch1">חלון ציטוטים</system:String>
+    <system:String x:Key="stdSymbol">החוזה</system:String>
+    <system:String x:Key="stdBid">ביקוש</system:String>
+    <system:String x:Key="stdAsk">היצע</system:String>
+    <system:String x:Key="stdHigh">high</system:String>
+    <system:String x:Key="stdLow">Low</system:String>
+    <system:String x:Key="stdTime">Time</system:String>
+    <system:String x:Key="stdexpiryDate">expiryDate</system:String>
+    <system:String x:Key="stdOpenPrice">Open Price</system:String>
+    <system:String x:Key="stdClosePrice">מחיר סגירה</system:String>
+    <system:String x:Key="stdNetChange">Net Change</system:String>
+    <system:String x:Key="stdPercentChange">Percent Change</system:String>
+    <system:String x:Key="stdLastPrice">Last Price</system:String>
+    <system:String x:Key="stdSpread">Spread</system:String>
+    <system:String x:Key="stdMaximumAmount">Maximum Amount</system:String>
+    <system:String x:Key="stdCommission">Commission</system:String>
+    <system:String x:Key="stdContractSize">Contract Size</system:String>
+    <system:String x:Key="stdIntialMargin">Intial Margin</system:String>
+
+
+    <!--Navigator-->
+
+    <system:String x:Key="stdFavorites">Favorites</system:String>
+    <system:String x:Key="stdAccounts">חשבונות/סקריפטים</system:String>
+    <system:String x:Key="stdIndicator">Indicator</system:String>
+    <system:String x:Key="stdOscillator">Oscillator</system:String>
+    <system:String x:Key="stdAverageTrueRange">Average True Range</system:String>
+    <system:String x:Key="stdCommodityChanelIndex">Commodity Chanel Index</system:String>
+    <system:String x:Key="stdDetrendedPriceOscillator">Detrended Price Oscillator</system:String>
+    <system:String x:Key="stdMomentumOscillator">Momentum Oscillator</system:String>
+    <system:String x:Key="stdMovingAverageEnvlope">Moving Average Envlope</system:String>
+    <system:String x:Key="stdRelativeStrengthIndex">Relative Strength Index</system:String>
+    <system:String x:Key="stdStochasticOscillator">Stochastic Oscillator</system:String>
+    <system:String x:Key="stdWilliams">Williams %R</system:String>
+    <system:String x:Key="stdTrends">Trends</system:String>
+    <system:String x:Key="stdAverageDirectionalMovementIndexe">Average Directional Movement Index</system:String>
+    <system:String x:Key="stdBollingerBands">Bollinger Bands</system:String>
+    <system:String x:Key="stdMovingAverage">Moving Average</system:String>
+    <system:String x:Key="stdParabolicSAR">Parabolic SAR</system:String>
+    <system:String x:Key="stdStanderdDeviation">Standerd Deviation</system:String>
+    <system:String x:Key="stdVolumes">Volumes</system:String>
+    <system:String x:Key="stdMoneyFlowIndexe">Money Flow Index</system:String>
+    <system:String x:Key="stdOnBalanceVolume">On Balance Volume</system:String>
+    <system:String x:Key="stdVolumeROC">Volume ROC</system:String>
+    <system:String x:Key="stdCustom">מותאם</system:String>
+    <system:String x:Key="stdAccumulativeSwingIndex">Accumulative Swing Index</system:String>
+    <system:String x:Key="stdAroon">Aroon</system:String>
+    <system:String x:Key="stdAroonOscillator">AroonOscillator</system:String>
+    <system:String x:Key="stdChaikinMoneyFlow">Chaikin Money Flow</system:String>
+    <system:String x:Key="stdChaikinVolatilty">Chaikin Volatilty</system:String>
+    <system:String x:Key="stdChandeMomentumOscillator">Chande Momentum Oscillator</system:String>
+    <system:String x:Key="stdComparativeRSI">Comparative RSI</system:String>
+    <system:String x:Key="stdEaseOfMovemente">Ease Of Movement</system:String>
+    <system:String x:Key="stdFractalChaosBands">Fractal Chaos Bands</system:String>
+    <system:String x:Key="stdFractalChaosOscillator">Fractal Chaos Oscillator</system:String>
+    <system:String x:Key="stdHighMinusLow">High Minus Low</system:String>
+    <system:String x:Key="stdHighLowBands">High/Low Bands</system:String>
+    <system:String x:Key="stdHistoricalVolatility">Historical Volatility</system:String>
+    <system:String x:Key="stdLinearRegressionForecast">Linear Regression Forecast</system:String>
+    <system:String x:Key="stdLinearRegressionIntercept">Linear Regression Intercept</system:String>
+    <system:String x:Key="stdLinearRegressionR-Squareds">Linear Regression R-Squared</system:String>
+    <system:String x:Key="stdLinearRegressionSlop">Linear Regression Slop</system:String>
+    <system:String x:Key="stdMassIndex">Mass Index</system:String>
+    <system:String x:Key="stdMedianPrice">Median Price</system:String>
+    <system:String x:Key="stdNegativeVolumeIndexs">Negative Volume Index</system:String>
+    <system:String x:Key="stdPerformanceIndex">Performance Index</system:String>
+    <system:String x:Key="stdPostiveVolumeIndex">High/Low Bands</system:String>
+    <system:String x:Key="stdPriceOscillator">Price Oscillator</system:String>
+    <system:String x:Key="stdPriceROC">Price ROC</system:String>
+    <system:String x:Key="stdPriceVolumeTrend">Price Volume Trend</system:String>
+    <system:String x:Key="stdPrimeNumberBands">Prime Number Bands</system:String>
+    <system:String x:Key="stdStochasticMomentumIndex">Stochastic Momentum Index</system:String>
+    <system:String x:Key="stdSwingIndex">Swing Index</system:String>
+    <system:String x:Key="stdTradeVolumeIndex">Trade Volume Index</system:String>
+    <system:String x:Key="stdTRIX">TRIX</system:String>
+    <system:String x:Key="stdTypicalPrice">Typical Price</system:String>
+    <system:String x:Key="stdUltimateOscillator">Ultimate Oscillator</system:String>
+    <system:String x:Key="stdVerticalHorizantalFilter">Vertical Horizantal Filter</system:String>
+    <system:String x:Key="stdVolumeOscillator">Volume Oscillator</system:String>
+    <system:String x:Key="stdWeightedClose">Weighted Close</system:String>
+    <system:String x:Key="stdWellesWilderSmothing">Welles Wilder Smothing</system:String>
+    <system:String x:Key="stdWillamsAccumulationDistribution">Willams Accumulation Distribution</system:String>
+
+
+</ResourceDictionary>

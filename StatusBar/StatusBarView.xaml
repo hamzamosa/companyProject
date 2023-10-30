@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="VertexFXClient.StatusBar.StatusBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VertexFXClient.StatusBar"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StatusBar>
+        <StatusBarItem Margin="450 0 0 0">
+
+        <TextBlock  Text="2022/15/01" />
+    </StatusBarItem>
+    <Separator  />
+
+    <StatusBarItem>
+        <TextBlock Margin="20 0 0 0" Text="O:255.05" />
+    </StatusBarItem>
+    <Separator  />
+    <StatusBarItem>
+        <TextBlock Margin="20 0 0 0" Text="H:255.05" />
+    </StatusBarItem>
+    <Separator/>
+
+    <StatusBarItem>
+        <TextBlock Margin="20 0 0 0" Text="L:255.05" />
+    </StatusBarItem>
+    <Separator/>
+    <StatusBarItem>
+        <TextBlock Margin="20 0 0 0" Text="C:255.05" />
+    </StatusBarItem>
+    <Separator/>
+    <StatusBarItem Grid.Column="4" Margin="40 0 0 0">
+        <TextBlock Text="+2:00 GMT" />
+    </StatusBarItem>
+    <Separator/>
+    <StatusBarItem Grid.Column="4" Margin="40 0 0 0">
+        <TextBlock Text="19/5/2022" />
+    </StatusBarItem>
+    <Separator/>
+    <StatusBarItem Grid.Column="4">
+        <ProgressBar Value="50" Width="90" Height="16" />
+    </StatusBarItem>
+    </StatusBar>
+</UserControl>

@@ -1,0 +1,473 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>VertexFXClient</RootNamespace>
+    <EnableDefaultItems>False</EnableDefaultItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Telerik.UI.for.Wpf.70.Xaml.Trial" Version="2023.2.718" />
+  </ItemGroup>
+  
+  <ItemGroup>
+  <ApplicationDefinition Include="App.xaml">
+    <Generator>MSBuild:Compile</Generator>
+    <SubType>Designer</SubType>
+  </ApplicationDefinition>
+  <Page Include="Alerts\AlertsView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="BackTesting\BackTestingView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="DataWindow\DataWindowView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="History\HistoryView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="Journal\JournalView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="MailBox\MailBoxView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="MainWindow.xaml">
+    <Generator>MSBuild:Compile</Generator>
+    <SubType>Designer</SubType>
+  </Page>
+  <Page Include="languages\ResourceDictionares.en.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Resource_China.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Resource_French.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Resource_Hebrew.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Resource_Hindi .xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Resource_Japanees .xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Resource_Portugal.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Resource_Russian.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Resource_Span.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Resource_Urdu.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="languages\Res_Ar.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="MarketWatch\MarketWatch.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="Navigator\NavigatorView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="NetTrade\NetTrade.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="NewsBar\NewsBarView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="News\NewsView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="StatusBar\StatusBarView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="Trade\TradeView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="vSrore\vStoeView.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Compile Include="Alerts\AlertsView.xaml.cs" />
+  <Compile Include="App.xaml.cs">
+    <DependentUpon>App.xaml</DependentUpon>
+    <SubType>Code</SubType>
+  </Compile>
+  <Compile Include="BackTesting\BackTestingView.xaml.cs" />
+  <Compile Include="DataWindow\DataWindowView.xaml.cs" />
+  <Compile Include="History\HistoryView.xaml.cs" />
+  <Compile Include="images\IconViewModel.cs" />
+  <Compile Include="Journal\JournalView.xaml.cs" />
+  <Compile Include="MailBox\MailBoxView.xaml.cs" />
+  <Compile Include="MainWindow.xaml.cs">
+    <DependentUpon>MainWindow.xaml</DependentUpon>
+    <SubType>Code</SubType>
+  </Compile>
+  <Compile Include="MarketWatch\MarketWatch.xaml.cs" />
+  <Compile Include="Navigator\NavigatorView.xaml.cs" />
+  <Compile Include="NetTrade\NetTrade.xaml.cs" />
+  <Compile Include="NewsBar\NewsBarView.xaml.cs" />
+  <Compile Include="News\NewsView.xaml.cs" />
+  <Compile Include="Properties\Resources.Designer.cs">
+    <DesignTime>True</DesignTime>
+    <AutoGen>True</AutoGen>
+    <DependentUpon>Resources.resx</DependentUpon>
+  </Compile>
+  <Compile Include="Properties\Settings.Designer.cs">
+    <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    <AutoGen>True</AutoGen>
+    <DependentUpon>Settings.settings</DependentUpon>
+  </Compile>
+  <Compile Include="StatusBar\StatusBarView.xaml.cs" />
+  <Compile Include="Trade\TradeView.xaml.cs" />
+  <Compile Include="vSrore\vStoeView.xaml.cs" />
+</ItemGroup>
+  
+  <ItemGroup>
+    <Resource Include="images\china.png" />
+    <Resource Include="images\PicPrint.png" />
+    <Resource Include="images\PicBitmap.png" />
+    <Resource Include="images\FullScreenChartImg.png" />
+    <Resource Include="images\HeikinAshiImg.png" />
+    <Resource Include="images\LineChartImg.png" />
+    <Resource Include="images\StandardImg.png" />
+    <Resource Include="images\CandlesImg.png" />
+    <Resource Include="images\PicTitleBar.png" />
+    <Resource Include="images\mnuTable.png" />
+    <Resource Include="images\PicSymbol.png" />
+    <Resource Include="images\PicAccount.png" />
+    <Resource Include="images\PicPlugins.png" />
+    <Resource Include="images\PicNews.png" />
+    <Resource Include="images\PicShowAll.png" />
+    <Resource Include="images\PicTickChart.png" />
+    <Resource Include="images\PicLang.png" />
+    <Resource Include="images\ExitImg.png" />
+    <Resource Include="images\EndImg.png" />
+    <Resource Include="images\ChartOptionsImg.png" />
+    <Resource Include="images\DailyImg.png" />
+    <Resource Include="images\1MinutesImg.png" />
+    <Resource Include="images\5MinutesImg.png" />
+    <Resource Include="images\15MinutesImg.png" />
+    <Resource Include="images\1HourImg.png" />
+    <Resource Include="images\30MinutesImg.png" />
+    <Resource Include="images\4HoursImg.png" />
+    <Resource Include="images\CursorImg.png" />
+    <Resource Include="images\CrosshairsImg.png" />
+    <Resource Include="images\fibo.png" />
+    <Resource Include="images\FiboRetracementsImg.png" />
+    <Resource Include="images\FiboProjectionImg.png" />
+    <Resource Include="images\FiboFanImg.png" />
+    <Resource Include="images\FiboArcsImg.png" />
+    <Resource Include="images\FiboTimeZoneImg.png" />
+    <Resource Include="images\ArrowLineImg.png" />
+    <Resource Include="images\custom.png" />
+    <Resource Include="images\ErrChannelsImg.png" />
+    <Resource Include="images\drawings.png" />
+    <Resource Include="images\AnnotationsImg.png" />
+    <Resource Include="images\channels.png" />
+    <Resource Include="images\AddDrawingImg.png" />
+    <Resource Include="images\darvas.png" />
+    <Resource Include="images\calc.png" />
+    <Resource Include="images\Contact.png" />
+    <Resource Include="images\addplugin.png" />
+    <Resource Include="images\default.png" />
+    <Resource Include="images\feedback.png" />
+    <Content Include="images\france (1).png" />
+    <Resource Include="images\themes (1).png" />
+    <Resource Include="images\themes.png" />
+    <Resource Include="images\night-mode.png" />
+    <Resource Include="images\logo.png" />
+    <Content Include="images\Trees\50001.png" />
+    <Content Include="images\Trees\50002.png" />
+    <Content Include="images\Trees\50003.png" />
+    <Content Include="images\Trees\50004.png" />
+    <Content Include="images\Trees\50005.png" />
+    <Content Include="images\Trees\50006.png" />
+    <Content Include="images\Trees\50007.png" />
+    <Content Include="images\Trees\50008.png" />
+    <Content Include="images\Trees\50009.png" />
+    <Content Include="images\Trees\50010.png" />
+    <Content Include="images\Trees\50011.png" />
+    <Content Include="images\Trees\50012.png" />
+    <Content Include="images\Trees\50013.png" />
+    <Content Include="images\Trees\50014.png" />
+    <Content Include="images\Trees\50015.png" />
+    <Content Include="images\Trees\50016.png" />
+    <Content Include="images\Trees\50017.png" />
+    <Content Include="images\Trees\50018.png" />
+    <Content Include="images\Trees\50019.png" />
+    <Content Include="images\Trees\50020.png" />
+    <Content Include="images\Trees\50021.png" />
+    <Content Include="images\Trees\50022.png" />
+    <Content Include="images\Trees\50023.png" />
+    <Content Include="images\Trees\50024.png" />
+    <Content Include="images\Trees\50025.png" />
+    <Content Include="images\Trees\50026.png" />
+    <Content Include="images\Trees\50027.png" />
+    <Content Include="images\Trees\50028.png" />
+    <Content Include="images\Trees\50029.png" />
+    <Content Include="images\Trees\50030.png" />
+    <Content Include="images\Trees\50031.png" />
+    <Content Include="images\Trees\50032.png" />
+    <Content Include="images\Trees\50033.png" />
+    <Content Include="images\Trees\50034.png" />
+    <Content Include="images\Trees\50035.png" />
+    <Content Include="images\Trees\50036.png" />
+    <Content Include="images\Trees\50037.png" />
+    <Content Include="images\Trees\50038.png" />
+    <Content Include="images\Trees\50039.png" />
+    <Content Include="images\Trees\50040.png" />
+    <Content Include="images\Trees\50041.png" />
+    <Content Include="images\Trees\50042.png" />
+    <Content Include="images\Trees\50043.png" />
+    <Content Include="images\Trees\50044.png" />
+    <Content Include="images\Trees\50045.png" />
+    <Content Include="images\Trees\50046.png" />
+    <Content Include="images\Trees\50047.png" />
+    <Content Include="images\Trees\50048.png" />
+    <Content Include="images\Trees\50049.png" />
+    <Content Include="images\Trees\50050.png" />
+    <Content Include="images\Trees\50051.png" />
+    <Content Include="images\Trees\50052.png" />
+    <Content Include="images\Trees\50053.png" />
+    <Content Include="images\Trees\50054.png" />
+    <Content Include="images\Trees\50055.png" />
+    <Content Include="images\Trees\50056.png" />
+    <Content Include="images\Trees\50057.png" />
+    <Content Include="images\Trees\50058.png" />
+    <Content Include="images\Trees\50059.png" />
+    <Content Include="images\Trees\50060.png" />
+    <Content Include="images\Trees\50061.png" />
+    <Content Include="images\Trees\50062.png" />
+    <Content Include="images\Trees\50063.png" />
+    <Content Include="logo.png" />
+    <Resource Include="images\Trees\50064.png" />
+    <Content Include="images\Trees\50065.png" />
+    <Content Include="images\Trees\50066.png" />
+    <Content Include="images\Trees\50067.png" />
+    <Content Include="images\Trees\50068.png" />
+    <Content Include="images\Trees\50069.png" />
+    <Content Include="images\Trees\50070.png" />
+    <Resource Include="images\Trees\50071.png" />
+    <Content Include="images\Trees\50072.png" />
+    <Content Include="images\Trees\50073.png" />
+    <Content Include="images\Trees\50074.png" />
+    <Content Include="images\Trees\50075.png" />
+    <Content Include="images\Trees\50076.png" />
+    <Content Include="images\Trees\50077.png" />
+    <Content Include="images\Trees\50078.png" />
+    <Resource Include="images\Trees\50079.png" />
+    <Content Include="images\Trees\50080.png" />
+    <Content Include="images\Trees\50081.png" />
+    <Content Include="images\Trees\50082.png" />
+    <Content Include="images\Trees\50083.png" />
+    <Content Include="images\Trees\50084.png" />
+    <Content Include="images\Trees\50085.png" />
+    <Content Include="images\Trees\50086.png" />
+    <Content Include="images\Trees\50087.png" />
+    <Content Include="images\Trees\50088.png" />
+    <Content Include="images\Trees\50089.png" />
+    <Content Include="images\Trees\50090.png" />
+    <Content Include="images\Trees\50091.png" />
+    <Content Include="images\Trees\50092.png" />
+    <Resource Include="images\Trees\50093.png" />
+    <Resource Include="images\Trees\50094.png" />
+    <Resource Include="images\Trees\50095.png" />
+    <Content Include="images\Trees\50096.png" />
+    <Content Include="images\Trees\50097.png" />
+    <Resource Include="images\Trees\50098.png" />
+    <Content Include="images\Trees\50099.png" />
+    <Content Include="images\Trees\50100.png" />
+    <Content Include="images\Trees\50101.png" />
+    <Resource Include="images\Trees\50102.png" />
+    <Content Include="images\Trees\50103.png" />
+    <Content Include="images\Trees\50104.png" />
+    <Content Include="images\Trees\50105.png" />
+    <Resource Include="images\Trees\50106.png" />
+    <Content Include="images\Trees\50107.png" />
+    <Resource Include="images\Trees\50108.png" />
+    <Content Include="images\Trees\50109.png" />
+    <Resource Include="images\Trees\logo.png" />
+    <Resource Include="images\PicAbout.png" />
+    <Resource Include="images\risk.png" />
+    <Resource Include="images\release.png" />
+    <Resource Include="images\PicHotkey.png" />
+    <Resource Include="images\tutorial.png" />
+    <Resource Include="images\PicHelp.png" />
+    <Resource Include="images\www.png" />
+    <Resource Include="images\PicClear.png" />
+    <Resource Include="images\PicAsk.png" />
+    <Resource Include="images\VTLEditor.png" />
+    <Resource Include="images\TemplatesImg.png" />
+    <Resource Include="images\volume.png" />
+    <Resource Include="images\trends.png" />
+    <Resource Include="images\oscillators.png" />
+    <Resource Include="images\ObjectsImg.png" />
+    <Resource Include="images\PriceImg.png" />
+    <Resource Include="images\LabelImg.png" />
+    <Resource Include="images\TextImg.png" />
+    <Resource Include="images\symbols.png" />
+    <Resource Include="images\FreeHandImg.png" />
+    <Resource Include="images\TrendLineImg.png" />
+    <Resource Include="images\VerLineImg.png" />
+    <Resource Include="images\HorLineImg.png" />
+    <Resource Include="images\lines.png" />
+    <Resource Include="images\RemoveCrosshairsImg.png" />
+    <Resource Include="images\MonthlyImg.png" />
+    <Resource Include="images\WeeklyImg.png" />
+    <Resource Include="images\PicGrid.png" />
+    <Resource Include="images\ShiftRightImg.png" />
+    <Resource Include="images\ShiftLeftImg.png" />
+    <Resource Include="images\HomeImg.png" />
+    <Resource Include="images\ShiftChartImg.png" />
+    <Resource Include="images\PeriodZoomImg.png" />
+    <Resource Include="images\ZoomOutImg.png" />
+    <Resource Include="images\ZoomInImg.png" />
+    <Resource Include="images\PicList.png" />
+    <Resource Include="images\PicDemoAcc.png" />
+    <Resource Include="images\PicResetInterface.png" />
+    <Resource Include="images\InterfaceImg.png" />
+    <Resource Include="images\PicStatmement.png" />
+    <Resource Include="images\PicOption.png" />
+    <Resource Include="images\SoundOnImg.png" />
+    <Resource Include="images\PicMail.png" />
+    <Resource Include="images\PicRefresh.png" />
+    <Resource Include="images\PicPwd.png" />
+    <Resource Include="images\PicLogout.png" />
+    <Resource Include="images\PicLogon.png" />
+    <Resource Include="images\PicBroad.png" />
+    <Resource Include="images\PicNO.png" />
+    <Resource Include="images\PicLS.png" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="images\icons8-ellipse-48.png" />
+    <Resource Include="images\icons8-rectangle-48.png" />
+    <Resource Include="images\icons8-triangle-32.png" />
+    <Resource Include="images\honduras.png" />
+    <Resource Include="images\japan.png" />
+    <Resource Include="images\pakistan.png" />
+    <Resource Include="images\portugal.png" />
+    <Resource Include="images\russia.png" />
+    <Resource Include="images\spain.png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Resource Include="images\india.png" />
+    <Resource Include="images\Arabic.png" />
+    <Resource Include="images\united-states (1).png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Resource Include="images\save.png.png" />
+    <Resource Include="images\data-collection.png" />
+    <Resource Include="images\undo.png" />
+    <Resource Include="images\NewPostion.png" />
+    <Resource Include="images\france.png" />
+    <Resource Include="images\gear-option.png" />
+    <Resource Include="images\paste.png" />
+    <Resource Include="images\question-mark.png" />
+    <Resource Include="images\television.png" />
+    <Resource Include="images\print.png" />
+    <Resource Include="images\united-states.png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Controls.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Spreadsheet">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Controls.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Crystal">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Crystal.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Expression_Dark">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Expression_Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Fluent">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Green">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Green.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Material">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Material.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office2013">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Office2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office2016">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Office2016.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office2016Touch">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Office2016Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office2019">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Office2019.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office_Black">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Office_Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office_Blue">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Office_Blue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office_Silver">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Office_Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Summer">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Summer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Transparent">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Transparent.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Vista">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Vista.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.VisualStudio2013">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.VisualStudio2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.VisualStudio2019">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.VisualStudio2019.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows11">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Windows11.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows7">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Windows7.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows8">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Windows8.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows8Touch">
+      <HintPath>..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2023\Binaries.NoXaml\WPF45\Telerik.Windows.Themes.Windows8Touch.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
